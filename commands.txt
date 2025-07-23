@@ -1,0 +1,2 @@
+clearml-agent init
+clearml-agent daemon --queue default

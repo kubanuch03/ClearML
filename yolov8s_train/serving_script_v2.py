@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 from ultralytics import YOLO
 
-class YOLOV8_Serving:
+class Preprocess:
     def __init__(self):
         self.model = None
         self.labels = None

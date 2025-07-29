@@ -19,7 +19,7 @@ docker rm $(docker ps -a -q)
 clearml-serving --id 38b7e2eff3f74bf9adca1601810bc7be model add \
 --engine custom \
 --endpoint "car-detector" \
---preprocess "/home/zazaka/Dmain/ML/ClearML/yolov8s_train/serving_script.py" \
+--preprocess "/home/zazaka/Dmain/ML/ClearML/yolov8s_train/serving_script_v2.py" \
 --name "yolov8s_cars_finetuned3" \
 --project "Car Detection Project"
 ```

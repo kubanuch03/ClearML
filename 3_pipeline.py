@@ -3,8 +3,8 @@ from clearml import PipelineController
 
 pipe = PipelineController(
     name='MNIST End-to-End',
-    project='examples-mnist',
-    version='0.0.1',
+    project='a20d2f69ed2547e19f6b996b10bb5ec7',
+    version='0.0.2',
 )
 
 # Указываем, что пайплайн будет выполняться в очереди 'default'

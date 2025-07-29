@@ -14,7 +14,7 @@ task = Task.init(
 # --- Шаг 1: Создаем проект для датасета в ClearML ---
 # Это как `Task.init`, но для данных.
 dataset_project = 'examples-mnist'
-dataset_name = 'mnist_dataset'
+dataset_name = 'mnist_dataset_2'
 
 # --- Шаг 2: Скачиваем данные ---
 print('Скачиваем данные MNIST...')

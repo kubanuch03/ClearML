@@ -1,0 +1,3 @@
+[submodule "clearml-serving"]
+	path = clearml-serving
+	url = https://github.com/clearml/clearml-serving.git

@@ -58,25 +58,20 @@ class Preprocess:
             raise ValueError(f"[BULLETPROOF] Ошибка обработки: {e}")
 
     def predict(self, data: np.ndarray) -> dict:
-        # ЭТОТ ТЕСТ НУЖЕН, ЧТОБЫ ПРОВЕРИТЬ, ВЫЗЫВАЕТСЯ ЛИ ФУНКЦИЯ ВООБЩЕ
-        print("--- [DUMMY PREDICT] Функция predict была успешно вызвана! ---")
-        
-        # Мы НЕ вызываем модель. Вместо этого возвращаем фальшивые данные.
-        # results = self.model(data, conf=0.01) # Проблемная строка закомментирована
+        print("--- [BULLETPROOF] Preprocess predict ---")
 
-        dummy_predictions = [
-            {
-                'label': 'dummy_car',
-                'confidence': 0.99,
-                'bbox': [10, 10, 100, 100]
-            }
-        ]
-        
-        print(f"[DUMMY PREDICT] Возвращаем {len(dummy_predictions)} фальшивых объектов")
-        return {
-                "object_count": 178,
-                "predictions": []
-            }
+        print("--- [BULLETPROOF] Предсказание с conf=0.01 ---")
+        results = self.model(data, conf=0.01) 
+
+        predictions = []
+        for box in results[0].boxes:
+            predictions.append({
+                'label': self.labels[int(box.cls)],
+                'confidence': float(box.conf),
+                'bbox': box.xyxy.cpu().numpy()[0].tolist()
+            })
+        print(f"[BULLETPROOF] Найдено {len(predictions)} объектов")
+        return {"predictions": predictions}
     
     # postprocess можно не менять
     def postprocess(self, data: dict, model_endpoint: str, version: str) -> dict:

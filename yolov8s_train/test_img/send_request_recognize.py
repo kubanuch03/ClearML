@@ -3,13 +3,17 @@ import json
 import numpy as np  
 from img import img_base
 ENDPOINT_URL = "http://localhost:8080/serve/car-detector"
-# AUTH_TOKEN = "your-secret-bearer-token"  
 
-
+# prod
 payload = {
     "image_base64": img_base
 }
 
+# test
+# payload = {
+#     "x0": [1, 2, 3],
+#     "x1": [4, 5, 6]
+# }
  
 
 print("Отправка запроса на Model Endpoint...")

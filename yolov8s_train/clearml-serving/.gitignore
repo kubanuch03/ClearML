@@ -25,7 +25,7 @@ Thumbs.db
 
 # Virtual environment
 .venv
-
+**/.env
 # Applications
 *.app
 *.exe

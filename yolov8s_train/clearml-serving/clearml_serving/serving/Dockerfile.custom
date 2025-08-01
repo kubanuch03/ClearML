@@ -1,0 +1,14 @@
+# Используем официальный образ как базу
+FROM allegroai/clearml-serving-inference:latest
+
+RUN apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0 && rm -rf /var/lib/apt/lists/*
+
+# Доустанавливаем пакеты, которые нужны для НАШЕГО скрипта
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir \
+    "numpy==1.26.4" \
+    "pandas" \
+    "clearml-serving" \
+    "ultralytics" \
+    "opencv-python-headless" \
+    "pyyaml"

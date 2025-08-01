@@ -62,7 +62,7 @@ class Preprocess:
             logging.info("Восстановили оригинальный torch.load.")
         # --- КОНЕЦ БЛОКА MONKEY-PATCHING ---
 
-
+    
     def preprocess(self, request: dict, model_endpoint: str, version: str) -> np.ndarray:
         image_base64 = request.get("image_base64")
         if not image_base64: raise ValueError("Ожидается 'image_base64'")

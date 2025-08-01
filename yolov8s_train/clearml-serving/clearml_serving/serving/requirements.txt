@@ -1,0 +1,16 @@
+attrs
+fastapi[all]
+uvicorn[standard]
+gunicorn
+asyncio
+aiocache
+tritonclient[grpc]
+starlette
+numpy
+scikit-learn
+pandas
+grpcio
+referencing
+Pillow
+requests
+ultralytics
